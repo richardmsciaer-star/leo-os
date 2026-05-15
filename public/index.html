@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Leo OS Dashboard</h1>
+    <div id="status">Cargando datos...</div>
+    <script>
+        fetch('/api/status').then(r => r.json()).then(d => {
+            document.getElementById('status').innerHTML = `CPU: ${d.cpu}% | Mem: ${d.mem}% | Disco: ${d.diskUsed}GB/${d.diskTotal}GB`;
+        });
+    </script>
+</body>
+</html>
